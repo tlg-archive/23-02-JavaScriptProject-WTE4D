@@ -17,3 +17,11 @@
   width: 100%
 }
 
+body {
+  background: url(https://images.pexels.com/photos/14928734/pexels-photo-14928734.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1);
+  background-size: 100%;
+}
+
+h1, h4 {
+  color: white;
+}
