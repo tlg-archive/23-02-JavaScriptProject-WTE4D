@@ -21,32 +21,96 @@
   </head>
   <body>
     <!-- Header -->
-    <header>
+    <header id="header">
       <h1>What The EFF's for Dinner!?</h1>
       <h4>Can't decide on what you want to eat?</h4>
     </header>
 
     <!-- Section 1 User Input -->
-    <section>
-      <form action="">
+    <section id="section1">
+      <form id="userForm" action="">
         <!-- Location -->
+        <div class="mb-3">
+          <label for="location">Location</label>
+          <input
+            required
+            minlength="2"
+            type="text"
+            class="form-control"
+            id="location"
+            placeholder="Enter the name of the City or Zip Code"
+          />
+        </div>
         <!-- Cuisine or IDK -->
+        <div class="mb-3">
+          <label for="cuisine">Type of Cuisine</label>
+          <input
+            required
+            type="text"
+            class="form-control"
+            id="cuisine"
+            placeholder="ie: American, Mexican, Asian, etc."
+          />
+        </div>
         <!-- Price Range -->
+        <div class="mb-3">
+          <label for="priceRange" class="form-label">Price Range</label>
+          <select class="form-select" id="priceRange" required>
+            <option selected disabled value="">
+              How much are you willing to spend?
+            </option>
+            <option>$ : Inexpensive</option>
+            <option>$$ : Moderately Priced</option>
+            <option>$$$ : Expensive</option>
+          </select>
+        </div>
         <!-- Distance in Radius or Mins -->
+        <div class="mb-3">
+          <label for="distance">How far are you willing to go for food?</label>
+          <input
+            required
+            type="text"
+            class="form-control"
+            id="distance"
+            placeholder="Enter the distance in miles or minutes"
+          />
+        </div>
+        <!-- Submit button -->
+        <div class="d-grid gap-2">
+          <button
+            type="submit"
+            id="showMeTheFoodsBtn"
+            class="btn btn-primary"
+            type="button"
+          >
+            Show me the FOODS!?
+          </button>
+        </div>
       </form>
     </section>
 
     <!-- Section 2 Results -->
-    <section>
+    <section id="section2" class="d-flex flex-column">
+      <!-- Header for Result -->
+      <h2>Well here you go then</h2>
       <!-- flexbox for list of results -->
-      <div></div>
+      <div id="resultContainer"></div>
 
       <!-- Start Over Button -->
-      <div></div>
+      <div class="d-grid gap-2">
+        <button
+          type="submit"
+          id="startOverBtn"
+          class="btn btn-primary"
+          type="button"
+        >
+          Meh, I changed my mind...
+        </button>
+      </div>
     </section>
 
     <!-- Footer -->
-    <footer></footer>
+    <footer id="footer"><h3>Put some stuff here</h3></footer>
 
     <!-- Bootstrap JS -->
     <script
