@@ -27,12 +27,11 @@ function processForm(event) {
 }
 
 // event listener for the start over button
-const startOverBtn = document.getElementById("startOverBtn")
 startOverBtn.addEventListener("click", () => {
-  // use the anchor to go to the user input section
-  window.location.href = "#section1"
-})
-
+  userForm.reset(); // Reset the user form
+  document.getElementById("resultsContainer").innerHTML = "";
+  window.location.href = "#section1"; // Take the user back to the input section
+});
 
 // create result container function
 function addResultCont(cLoc, cCui, cPrice, cDist) {
