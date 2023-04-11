@@ -34,7 +34,7 @@
     </header>
 
     <!-- Section 1 User Input -->
-    <section id="section1">
+    <section id="section1" class="d-flex justify-content-center">
       <form id="userForm" action="">
         <!-- Location -->
         <div class="mb-3">
@@ -66,9 +66,10 @@
             <option selected disabled value="">
               How much are you willing to spend?
             </option>
-            <option>$ : Inexpensive</option>
-            <option>$$ : Moderately Priced</option>
-            <option>$$$ : Expensive</option>
+            <option value="1">$ : Inexpensive</option>
+            <option value="2">$$ : Moderately Priced</option>
+            <option value="3">$$$ : Expensive</option>
+            <option value="4">$$$$ : I'm a baller yo</option>
           </select>
         </div>
         <!-- Distance in Radius or Mins -->
@@ -79,7 +80,7 @@
             type="text"
             class="form-control"
             id="distance"
-            placeholder="Enter the distance in miles or minutes"
+            placeholder="Maximum distance is 24 miles"
           />
         </div>
         <!-- Submit button -->
@@ -97,13 +98,13 @@
     </section>
 
     <!-- Section 2 Results -->
-    <section id="section2" class="d-flex flex-column flex-wrap">
+    <section id="section2">
       <!-- Header for Result -->
       <h2>Well here you go then</h2>
       <!-- flexbox for list of results -->
       <div
         id="resultsContainer"
-        class="d-flex justify-content-around flex-wrap"
+        class="d-flex flex-wrap justify-content-around"
       ></div>
 
       <!-- Start Over Button -->
@@ -122,8 +123,7 @@
     <!-- Footer -->
     <footer id="footer">
       <h3>Put some stuff here</h3>
-      <p>Sponsored by Google Maps API free trial</p>
-      <p>Trial ends on 10July 2023</p>
+      <p>Made possible by Yelp Fusion API</p>
     </footer>
 
     <!-- Bootstrap JS -->
