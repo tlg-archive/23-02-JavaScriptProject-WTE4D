@@ -19,7 +19,6 @@ function processForm(event) {
   // create restaurant container
   let rCont = addResultCont(loc, cui, price, dist)
 
-
   // place the restaurant container in the result container
   document.getElementById("resultsContainer").appendChild(rCont)
   
@@ -90,3 +89,12 @@ resultsContainer.addEventListener("click", (event) => {
     eModify.parentElement.parentElement.remove()
   }
 })
+
+
+
+
+
+// BELOW IS EXPERIMENTAL -----------------------------------------------------------
+
+
+
