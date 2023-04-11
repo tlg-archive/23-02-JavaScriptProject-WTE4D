@@ -12,21 +12,18 @@
   padding: 3em;
   box-shadow: 0 6px 6px rgba(0, 0, 0, 0.6);
   background-color: transparent;
-  overflow: hidden;
+  /* overflow: hidden; */
 }
 
 .cont {
   border: 4px solid white;
   margin: 5px;
   background-color: black;
-
 }
 
 #section1, #section2 {
   height: 100vh;
   width: 100%;
-  display: flex;
-  justify-content: center;
 }
 
 body {
