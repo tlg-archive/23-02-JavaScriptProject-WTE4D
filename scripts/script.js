@@ -5,7 +5,7 @@ showMeTheFoodsBtn.addEventListener("submit", processForm)
 // create processForm function
 function processForm(event) {
   // prevent the user from creating empty card
-  event.preventDefault(event);
+  event.preventDefault();
 
   // store user input
   let loc = event.target.elements["location"].value
@@ -26,7 +26,6 @@ function processForm(event) {
     convertedDist = 40000
   }
   
-
   // call the function to fill the up the result container with results
   addResultCont(loc, cui, parsedPrice, convertedDist)
   
@@ -43,19 +42,37 @@ startOverBtn.addEventListener("click", () => {
 
 // create result container function
 function addResultCont(cLoc, cCui, cPrice, cDist) {
-  // setup for yelp api
-  const options = {
+  // // setup for yelp api (not working)
+  // const options = {
+  //   method: 'GET',
+  //   mode: 'no-cors',
+  //   headers: {
+  //     accept: 'application/json',
+  //     Authorization: 'Bearer c5oRR4lYpBr5vAR3bmBeaikZaqZDCS_Tfl7nL7no6UN8rZarajvJ5AdHNENTk-hFGqRAU2ELrYZs0H-Bo6CwNR1CL4g8FRqpUXxWD7IhyffcYSOSp1_sQnzoJfg1ZHYx'
+  //   }
+  // };  
+
+  // // get data from yelp api
+  // fetch(`https://cors-anywhere.herokuapp.com/https://api.yelp.com/v3/businesses/search?location=${cLoc}&term=${cCui}&radius=${cDist}&categories=&price=${cPrice}&sort_by=best_match&limit=10`, options)
+  //   .then(response => response.json())
+  //   .then(response => {
+  
+  // setup for jquery (its working for now)
+  const settings = {
+    async: true,
+    crossDomain: true,
+    url: `https://cors-anywhere.herokuapp.com/https://api.yelp.com/v3/businesses/search?location=${cLoc}&term=${cCui}&radius=${cDist}&categories=&price=${cPrice}&sort_by=best_match&limit=10`,
     method: 'GET',
+    mode: 'no-cors',
     headers: {
       accept: 'application/json',
-      Authorization: 'Bearer 99Q8cWnVelRVPYnhQJ0KGttOj-wXnTJu1he2lo7L-fTMK3YovahIBIA9_COKt6c4v26L_EiZ90uuvhBV0lHn-BINMHYICHvocMKwOm_f8jH-HXMF8Z4ee2z_u8U1ZHYx'
+      Authorization: 'Bearer c5oRR4lYpBr5vAR3bmBeaikZaqZDCS_Tfl7nL7no6UN8rZarajvJ5AdHNENTk-hFGqRAU2ELrYZs0H-Bo6CwNR1CL4g8FRqpUXxWD7IhyffcYSOSp1_sQnzoJfg1ZHYx'
     }
   };
 
-  // get data from yelp api
-  fetch(`https://api.yelp.com/v3/businesses/search?location=${cLoc}&term=${cCui}&radius=${cDist}&categories=&price=${cPrice}&sort_by=best_match&limit=10`, options)
-    .then(response => response.json())
-    .then(response => {
+  // jquery
+  $.ajax(settings).done(function (response){
+
       let data = response
       // console.log(data);
 
@@ -105,6 +122,7 @@ function addResultCont(cLoc, cCui, cPrice, cDist) {
         resultsContainer.appendChild(card)
       }
     })
+    .catch(err => console.error(err));
 }
 
 // create event listener in result_container
