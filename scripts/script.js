@@ -82,31 +82,33 @@ function addResultCont(cLoc, cCui, cPrice, cDist) {
         // create card container
         let card = document.createElement("div")
         card.setAttribute("id", name)
-        card.setAttribute("class", "cards")
+        card.setAttribute("class", "card flex-row justify-content-between align-items-center")
       
         // create card contents
         card.innerHTML =`
-          <h4>${name}</h4>
-          <img src=${pic} alt=${name} class="cardImage">
-          <br>
-          <a href=${url}>Visit Website</a>
-          <h5>Rating: ${rating}    Price: ${price}</h5>
+          <img src=${pic} alt=${name} class="cardPhoto">
+
+          <div class='info'>
+            <div class="top"> 
+              <h5 class="resName">${name}</h5>
+              <h5 class="ratePrice">Rating: ${rating}    Price: ${price}</h5>
+            </div>  
+            <div class='hidden bottom summary'>
+              <h5>Address: ${address}</h5>
+              <h5>Phone Number: ${phone}</h5>
+            </div>
+          </div>
+
+          <div class='group'>
+            <a href=${url} class="anchorBtn">Visit Website</a>
+            <div class='hidden bottom'>
+              <button class='simple btn btn-danger'>Remove</button>
+            </div>
+          </div>
         `
-        // create button container
-        let rBtnCont = document.createElement("div")
-        rBtnCont.setAttribute("class", "d-flex justify-content-center")
-
-        // create remove button
-        let rRemBtn = document.createElement("button")
-        rRemBtn.setAttribute("class", "btn btn-danger")
-        rRemBtn.innerText = "Remove"
-        rBtnCont.appendChild(rRemBtn)
-
-        // place button container in card
-        card.appendChild(rBtnCont)
 
         // append card to container
-        resultsContainer.appendChild(card)
+        innerContainer.appendChild(card)
       }
     })
     .catch(err => console.error(err));
@@ -115,13 +117,17 @@ function addResultCont(cLoc, cCui, cPrice, cDist) {
 // create event listener in result_container
 resultsContainer.addEventListener("click", (event) => {
   let eModify = event.target
-
+  console.log(eModify);
+  // delete container
   if (eModify.innerText === "Remove") {
-    // delete container
     eModify.parentElement.parentElement.remove()
   }
-})
 
+  // toggle cards
+  if (eModify.classList.contains("card")) {
+    eModify.classList.toggle("open")
+  }
+})
 
 // BELOW IS EXPERIMENTAL -----------------------------------------------------------
 
