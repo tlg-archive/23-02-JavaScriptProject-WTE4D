@@ -112,7 +112,7 @@ function addResultCont(cLoc, cCui, cPrice, cDist) {
         `
 
         // append card to container
-        innerContainer.appendChild(card)
+        resultsContainer.appendChild(card)
       }
     })
     .catch(err => console.error(err));
@@ -123,8 +123,8 @@ resultsContainer.addEventListener("click", (event) => {
   let eModify = event.target
   console.log(eModify);
   // delete container
-  if (eModify.innerText === "Remove") {
-    eModify.parentElement.parentElement.remove()
+  if (eModify.textContent === "Remove") {
+    eModify.parentElement.parentElement.parentElement.remove()
   }
 
   // toggle cards
