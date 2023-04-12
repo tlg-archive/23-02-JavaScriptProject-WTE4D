@@ -78,6 +78,10 @@ function addResultCont(cLoc, cCui, cPrice, cDist) {
         let price = data.businesses[i].price
         // get rating
         let rating = data.businesses[i].rating
+        // get address
+        let address = data.businesses[i].location.display_address[0] + " " + data.businesses[i].location.display_address[1]
+        // get phone number
+        let phone = data.businesses[i].display_phone
       
         // create card container
         let card = document.createElement("div")
