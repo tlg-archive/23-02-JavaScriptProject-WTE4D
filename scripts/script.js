@@ -112,7 +112,7 @@ function addResultCont(cLoc, cCui, cPrice, cDist) {
         `
 
         // append card to container
-        innerContainer.appendChild(card)
+        resultsContainer.appendChild(card)
       }
     })
     .catch(err => console.error(err));
