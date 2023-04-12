@@ -16,9 +16,6 @@
     <!-- CSS Styles -->
     <link rel="stylesheet" href="./css/styles.css" />
 
-    <!-- jquery -->
-    <script async defer src="./scripts/jquery-3.6.4.min.js"></script>
-
     <!-- JS -->
     <script async defer src="./scripts/script.js"></script>
     <title>WTE4D</title>
@@ -54,7 +51,7 @@
             placeholder="Enter the name of the City or Zip Code"
           />
         </div>
-        <!-- Cuisine or IDK -->
+        <!-- Cuisine -->
         <div class="mb-3">
           <label for="cuisine">Type of Cuisine</label>
           <input
@@ -112,10 +109,7 @@
       <!-- Header for Result -->
       <h2>Well here you go then</h2>
       <!-- flexbox for list of results -->
-      <div
-        id="resultsContainer"
-        class="d-flex flex-wrap justify-content-around"
-      ></div>
+      <div id="resultsContainer" class="list"></div>
 
       <!-- Start Over Button -->
       <div class="mehBtn">
@@ -145,5 +139,8 @@
       integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe"
       crossorigin="anonymous"
     ></script>
+
+    <!-- jquery -->
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
   </body>
 </html>
