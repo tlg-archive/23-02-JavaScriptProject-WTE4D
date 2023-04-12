@@ -14,7 +14,10 @@
     />
 
     <!-- CSS Styles -->
-    <link rel="stylesheet" href="./styles.css" />
+    <link rel="stylesheet" href="./css/styles.css" />
+
+    <!-- jquery -->
+    <script async defer src="./scripts/jquery-3.6.4.min.js"></script>
 
     <!-- JS -->
     <script async defer src="./scripts/script.js"></script>
@@ -36,7 +39,8 @@
           <input
             required
             minlength="2"
-            type="text"
+            maxlength="50"
+            type="search"
             class="form-control"
             id="location"
             placeholder="Enter the name of the City or Zip Code"
@@ -47,7 +51,9 @@
           <label for="cuisine">Type of Cuisine</label>
           <input
             required
-            type="text"
+            minlength="2"
+            maxlength="50"
+            type="search"
             class="form-control"
             id="cuisine"
             placeholder="ie: American, Mexican, Asian, etc."
@@ -63,7 +69,7 @@
             <option value="1">$ : Inexpensive</option>
             <option value="2">$$ : Moderately Priced</option>
             <option value="3">$$$ : Expensive</option>
-            <option value="4">$$$$ : I'm a baller yo</option>
+            <option value="4">$$$$ : I'm a baller yo!</option>
           </select>
         </div>
         <!-- Distance in Radius or Mins -->
@@ -71,10 +77,12 @@
           <label for="distance">How far are you willing to go for food?</label>
           <input
             required
-            type="text"
+            type="number"
+            min="1"
+            max="25"
             class="form-control"
             id="distance"
-            placeholder="Maximum distance is 24 miles"
+            placeholder="Range between 1 to 25 Miles"
           />
         </div>
         <!-- Submit button -->
@@ -114,11 +122,14 @@
       </div>
     </section>
 
-    <!-- Footer -->
-    <footer id="footer">
-      <h3>Put some stuff here</h3>
-      <p>Made possible by Yelp Fusion API</p>
-    </footer>
+    <!-- section 3 -->
+    <section id="section3">
+      <!-- Footer -->
+      <footer id="footer">
+        <h3>Put some stuff here</h3>
+        <p>Made possible by Yelp Fusion API</p>
+      </footer>
+    </section>
 
     <!-- Bootstrap JS -->
     <script
@@ -126,8 +137,5 @@
       integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe"
       crossorigin="anonymous"
     ></script>
-
-    <!-- jquery -->
-    <script src="./scripts/jquery-3.6.4.min.js"></script>
   </body>
 </html>
