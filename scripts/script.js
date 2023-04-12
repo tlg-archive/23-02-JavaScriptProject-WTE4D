@@ -42,21 +42,9 @@ startOverBtn.addEventListener("click", () => {
 
 // create result container function
 function addResultCont(cLoc, cCui, cPrice, cDist) {
-  // // setup for yelp api (not working)
-  // const options = {
-  //   method: 'GET',
-  //   mode: 'no-cors',
-  //   headers: {
-  //     accept: 'application/json',
-  //     Authorization: 'Bearer c5oRR4lYpBr5vAR3bmBeaikZaqZDCS_Tfl7nL7no6UN8rZarajvJ5AdHNENTk-hFGqRAU2ELrYZs0H-Bo6CwNR1CL4g8FRqpUXxWD7IhyffcYSOSp1_sQnzoJfg1ZHYx'
-  //   }
-  // };  
+  // Use this on your browser when not working to initialize proxy
+  // https://cors-anywhere.herokuapp.com/https://api.yelp.com/v3/businesses/search?location=seattle&term=ramen&radius=25000&categories=&price=1&sort_by=best_match&limit=10
 
-  // // get data from yelp api
-  // fetch(`https://cors-anywhere.herokuapp.com/https://api.yelp.com/v3/businesses/search?location=${cLoc}&term=${cCui}&radius=${cDist}&categories=&price=${cPrice}&sort_by=best_match&limit=10`, options)
-  //   .then(response => response.json())
-  //   .then(response => {
-  
   // setup for jquery (its working for now)
   const settings = {
     async: true,
@@ -91,7 +79,6 @@ function addResultCont(cLoc, cCui, cPrice, cDist) {
         // get rating
         let rating = data.businesses[i].rating
       
-      
         // create card container
         let card = document.createElement("div")
         card.setAttribute("id", name)
@@ -100,7 +87,7 @@ function addResultCont(cLoc, cCui, cPrice, cDist) {
         // create card contents
         card.innerHTML =`
           <h4>${name}</h4>
-          <img src=${pic} alt=${name}>
+          <img src=${pic} alt=${name} class="cardImage">
           <br>
           <a href=${url}>Visit Website</a>
           <h5>Rating: ${rating}    Price: ${price}</h5>
@@ -136,10 +123,5 @@ resultsContainer.addEventListener("click", (event) => {
 })
 
 
-
-
-
 // BELOW IS EXPERIMENTAL -----------------------------------------------------------
-
-
 
