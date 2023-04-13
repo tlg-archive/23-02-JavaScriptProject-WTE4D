@@ -2,7 +2,7 @@
 const yay = document.getElementById("yay")
 const boo = document.getElementById("boo")
 const belly = document.getElementById("belly")
-const nani = document.getElementById("nani")
+const anotherOne = document.getElementById("anotherOne")
 
 // add event listener to the form
 const showMeTheFoodsBtn = document.getElementById("userForm")
@@ -39,8 +39,10 @@ function processForm(event) {
   // use the anchor to go to the results section
   window.location.href = "#section2"
 
-  // play audio after a time in milliseconds
+  // play audio after a time in milliseconds, add loading screen
   setTimeout(() => {
+    loadingAnimation.style.display = "none"
+    resultsContainer.style.display = "flex"
     yay.play()
   }, 1000)
 }
@@ -50,7 +52,9 @@ startOverBtn.addEventListener("click", () => {
   userForm.reset(); // Reset the user form
   document.getElementById("resultsContainer").innerHTML = "";
   window.location.href = "#section1"; // Take the user back to the input section
-  nani.play()
+  loadingAnimation.style.display = "block"
+  resultsContainer.style.display = "none"
+  anotherOne.play()
 });
 
 // create result container function
