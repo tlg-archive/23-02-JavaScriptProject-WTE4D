@@ -3,7 +3,7 @@
   color: white;
 }
 
-#section1, #section2, #resultsContainer {
+#resultsContainer {
   border: 1px solid #e07a5f;
   border-radius: 20px;
   margin: 5px;
@@ -12,6 +12,15 @@
   padding: 3em;
   box-shadow: 0 6px 6px rgba(0, 0, 0, 0.6);
   background-color: transparent;
+}
+
+#section1, #section2 {
+border-radius: 20px;
+margin: 5px;
+font-family: sans-serif;
+padding: 5em;
+box-shadow: 0 6px 6px rgba(0, 0, 0, 0.6);
+background-color: transparent;
 }
 
 #section1, #section2 {
