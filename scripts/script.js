@@ -1,3 +1,9 @@
+// sound effects
+const yay = document.getElementById("yay")
+const boo = document.getElementById("boo")
+const belly = document.getElementById("belly")
+const nani = document.getElementById("nani")
+
 // add event listener to the form
 const showMeTheFoodsBtn = document.getElementById("userForm")
 showMeTheFoodsBtn.addEventListener("submit", processForm)
@@ -32,6 +38,11 @@ function processForm(event) {
   
   // use the anchor to go to the results section
   window.location.href = "#section2"
+
+  // play audio after a time in milliseconds
+  setTimeout(() => {
+    yay.play()
+  }, 1000)
 }
 
 // event listener for the start over button
@@ -39,6 +50,7 @@ startOverBtn.addEventListener("click", () => {
   userForm.reset(); // Reset the user form
   document.getElementById("resultsContainer").innerHTML = "";
   window.location.href = "#section1"; // Take the user back to the input section
+  nani.play()
 });
 
 // create result container function
@@ -126,11 +138,22 @@ resultsContainer.addEventListener("click", (event) => {
   // delete container
   if (eModify.textContent === "Remove") {
     eModify.parentElement.parentElement.parentElement.remove()
+    boo.play()
   }
 
   // toggle cards
   if (eModify.classList.contains("card")) {
     eModify.classList.toggle("open")
+  }
+})
+
+// event listener for accessing website
+resultsContainer.addEventListener("mousedown", (e) => {
+  let eMod = e.target
+
+  // play sound when you pick a website
+  if (eMod.textContent === "Visit Website" || eMod.button === 1) {
+    belly.play()
   }
 })
 
