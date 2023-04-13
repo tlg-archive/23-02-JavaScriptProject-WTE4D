@@ -115,7 +115,7 @@ option {
 /* For the cards */
 .list {
   border-radius: 3px;
-  max-height: 88vh;
+  max-height: 82vh;
   overflow-y:scroll;
   display: flex;
   flex-direction: column;
