@@ -3,17 +3,6 @@
   color: white;
 }
 
-#resultsContainer {
-  /* border: 1px solid #e07a5f; */
-  border-radius: 20px;
-  margin: 5px;
-  font-size: medium;
-  font-family: sans-serif;
-  padding: 3em;
-  box-shadow: 0 6px 6px rgba(0, 0, 0, 0.6);
-  background-color: transparent;
-}
-
 #section1, #section2 {
 border-radius: 20px;
 margin: 5px;
@@ -112,16 +101,28 @@ option {
   --dark-color: #131325;
 }
 
-/* For the cards */
-.list {
-  border-radius: 3px;
-  max-height: 82vh;
-  overflow-y:scroll;
+/* For loading purposes */
+#loading_screen {
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
+#loadingAnimation {
+  display: block
+}
+
+#resultsContainer {
+  border-radius: 3px;
+  max-height: 82vh;
+  overflow-y:scroll;
+  /* display: flex; */
+  display: none;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* For the cards */
 .card {
   height: 300px;
   width: 750px;
