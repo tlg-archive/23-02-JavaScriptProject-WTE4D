@@ -3,8 +3,8 @@
   color: white;
 }
 
-#section1, #section2, #resultsContainer {
-  border: 1px solid #e07a5f;
+#section1, #section2 {
+  /* border: 1px solid #e07a5f; */
   border-radius: 20px;
   margin: 5px;
   font-size: medium;
@@ -94,6 +94,10 @@ h5 {
   font-size: medium;
 }
 
+option {
+  color: black
+}
+
 /* Define custom variable */
 :root {
   --dark-color: #131325;
@@ -156,7 +160,9 @@ h5 {
 
 .open {
   margin: 30px;
-  height: auto;
+  height: 450px;
+  width: 850px;
+  padding: 15px 20px;
 }
 
 .card.open .top {
