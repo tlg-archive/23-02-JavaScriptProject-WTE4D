@@ -12,6 +12,7 @@ function processForm(event) {
   let cui = event.target.elements["cuisine"].value
   let price = event.target.elements["priceRange"].value
   let dist = event.target.elements["distance"]. value
+  let numRes = event.target.elements["numRes"]. value
 
   // clear the form
   userForm.reset()
@@ -27,7 +28,7 @@ function processForm(event) {
   }
   
   // call the function to fill the up the result container with results
-  addResultCont(loc, cui, parsedPrice, convertedDist)
+  addResultCont(loc, cui, parsedPrice, convertedDist, numRes)
   
   // use the anchor to go to the results section
   window.location.href = "#section2"
@@ -41,7 +42,7 @@ startOverBtn.addEventListener("click", () => {
 });
 
 // create result container function
-function addResultCont(cLoc, cCui, cPrice, cDist) {
+function addResultCont(cLoc, cCui, cPrice, cDist, cNum) {
   // Use this on your browser when not working to initialize proxy
   // https://cors-anywhere.herokuapp.com/https://api.yelp.com/v3/businesses/search?location=seattle&term=ramen&radius=25000&categories=&price=1&sort_by=best_match&limit=10
 
@@ -49,7 +50,7 @@ function addResultCont(cLoc, cCui, cPrice, cDist) {
   const settings = {
     async: true,
     crossDomain: true,
-    url: `https://cors-anywhere.herokuapp.com/https://api.yelp.com/v3/businesses/search?location=${cLoc}&term=${cCui}&radius=${cDist}&categories=&price=${cPrice}&sort_by=best_match&limit=10`,
+    url: `https://cors-anywhere.herokuapp.com/https://api.yelp.com/v3/businesses/search?location=${cLoc}&term=${cCui}&radius=${cDist}&categories=&price=${cPrice}&sort_by=best_match&limit=${cNum}`,
     method: 'GET',
     mode: 'no-cors',
     headers: {
@@ -135,3 +136,17 @@ resultsContainer.addEventListener("click", (event) => {
 
 // BELOW IS EXPERIMENTAL -----------------------------------------------------------
 
+// const cards = document.querySelectorAll('.card');
+
+// cards.forEach((card) => {
+//   card.addEventListener('click', () => {
+//     cards.forEach((c) => {
+//       if (c !== card) {
+//         c.classList.remove('open');
+//         c.classList.add('closed');
+//       }
+//     });
+//     card.classList.remove('closed');
+//     card.classList.add('open');
+//   });
+// });

@@ -53,7 +53,7 @@
         </div>
         <!-- Cuisine -->
         <div class="mb-3">
-          <label for="cuisine">Type of Cuisine</label>
+          <label for="cuisine">Type of Cuisine or Food</label>
           <input
             required
             minlength="2"
@@ -61,7 +61,7 @@
             type="search"
             class="form-control"
             id="cuisine"
-            placeholder="ie: American, Mexican, Asian, etc."
+            placeholder="i.e., Japanese or Ramen"
           />
         </div>
         <!-- Price Range -->
@@ -88,6 +88,21 @@
             class="form-control"
             id="distance"
             placeholder="Range between 1 to 25 Miles"
+          />
+        </div>
+        <!-- Number of result -->
+        <div class="mb-3">
+          <label for="distance"
+            >How many restaurants do you want to check?</label
+          >
+          <input
+            required
+            type="number"
+            min="1"
+            max="50"
+            class="form-control"
+            id="numRes"
+            placeholder="Range between 1 to 50"
           />
         </div>
         <!-- Submit button -->
