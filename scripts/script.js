@@ -10,6 +10,9 @@ showMeTheFoodsBtn.addEventListener("submit", processForm)
 
 // create processForm function
 function processForm(event) {
+  // load animation
+  loadingAnimation.style.display = "block"
+
   // prevent the user from creating empty card
   event.preventDefault();
 
@@ -44,7 +47,7 @@ function processForm(event) {
     loadingAnimation.style.display = "none"
     resultsContainer.style.display = "flex"
     yay.play()
-  }, 1000)
+  }, 1250)
 }
 
 // event listener for the start over button
@@ -52,7 +55,6 @@ startOverBtn.addEventListener("click", () => {
   userForm.reset(); // Reset the user form
   document.getElementById("resultsContainer").innerHTML = "";
   window.location.href = "#section1"; // Take the user back to the input section
-  loadingAnimation.style.display = "block"
   resultsContainer.style.display = "none"
   anotherOne.play()
 });
