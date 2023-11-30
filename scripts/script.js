@@ -123,7 +123,7 @@ function addResultCont(cLoc, cCui, cPrice, cDist, cNum) {
           </div>
 
           <div class='group'>
-            <a href=${url} class="anchorBtn">Visit Website</a>
+            <a href=${url} class="anchorBtn" target="_blank">Visit Website</a>
             <div class='hidden bottom'>
               <button class='simple btn btn-danger'>Remove</button>
             </div>
