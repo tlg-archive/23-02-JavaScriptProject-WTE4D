@@ -61,16 +61,13 @@ startOverBtn.addEventListener("click", () => {
 
 // create result container function
 function addResultCont(cLoc, cCui, cPrice, cDist, cNum) {
-  // Use this on your browser when not working to initialize proxy
-  // https://cors-anywhere.herokuapp.com/https://api.yelp.com/v3/businesses/search?location=seattle&term=ramen&radius=25000&categories=&price=1&sort_by=best_match&limit=10
-
   // setup for jquery (its working for now)
   const settings = {
     async: true,
     crossDomain: true,
-    url: `https://api.yelp.com/v3/businesses/search?location=${cLoc}&term=${cCui}&radius=${cDist}&categories=&price=${cPrice}&sort_by=best_match&limit=${cNum}`,
+    url: `https://cors-anywhere.herokuapp.com/https://api.yelp.com/v3/businesses/search?location=${cLoc}&term=${cCui}&radius=${cDist}&categories=&price=${cPrice}&sort_by=best_match&limit=${cNum}`,
     method: 'GET',
-    // mode: 'no-cors',
+    mode: 'no-cors',
     headers: {
       accept: 'application/json',
       Authorization: 'Bearer c5oRR4lYpBr5vAR3bmBeaikZaqZDCS_Tfl7nL7no6UN8rZarajvJ5AdHNENTk-hFGqRAU2ELrYZs0H-Bo6CwNR1CL4g8FRqpUXxWD7IhyffcYSOSp1_sQnzoJfg1ZHYx'
@@ -162,20 +159,3 @@ resultsContainer.addEventListener("mousedown", (e) => {
     belly.play()
   }
 })
-
-// BELOW IS EXPERIMENTAL -----------------------------------------------------------
-
-// const cards = document.querySelectorAll('.card');
-
-// cards.forEach((card) => {
-//   card.addEventListener('click', () => {
-//     cards.forEach((c) => {
-//       if (c !== card) {
-//         c.classList.remove('open');
-//         c.classList.add('closed');
-//       }
-//     });
-//     card.classList.remove('closed');
-//     card.classList.add('open');
-//   });
-// });
